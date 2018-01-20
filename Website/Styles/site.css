@@ -79,3 +79,11 @@
   }
   
   .overflow-hidden { overflow: hidden; }
+
+  .activeMenu{
+
+    font-weight: bold;
+    text-decoration-color: black;
+    -moz-text-decoration-color: black;
+    -webkit-text-stroke-color: black;
+  }
