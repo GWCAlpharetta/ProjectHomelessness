@@ -87,3 +87,16 @@
     -moz-text-decoration-color: black;
     -webkit-text-stroke-color: black;
   }
+  
+
+.roundButton {
+  background-color: rgb(177, 125, 219);
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 2px 2px;
+    border-radius: 50%;}
