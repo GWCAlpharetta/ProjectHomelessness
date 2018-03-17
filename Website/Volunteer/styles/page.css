@@ -4,9 +4,45 @@
 
 }
 .area2 { 
-    color: violet;
+    color: black;
     padding: 0 7px;
-    font-size: 30px;
+    font-size: 40px;
+    width: 645px
     
 
+ 
+    
+
+}
+.area3 {
+    color: black;
+    padding: 0 7px;
+    font-size: 40px;
+
+
+
+}
+@media screen and (max-width: 481px){
+    #area1 {
+        color: lightpink;
+        padding: 0 7px;
+        *min-width: 640px;
+    
+    }
+    #area2 { 
+        color: black;
+        padding: 0 7px;
+        font-size: 40px;
+        width: 645px
+        
+    
+     
+        
+    
+    }
+    #area3 {
+        color: black;
+        padding: 0 7px;
+        font-size: 40px;
+    }
 }
