@@ -22,7 +22,7 @@
         </nav>
         <h1>Job Seeker</h1>
     <div class="row"> 
-        <div class= "col-md-4">
+        <div class= "col-md-4 offset-md-2">
           <form>
             <div class="form-group">
               <label for="exampleInputZipcode1">  Zipcode </label>
@@ -31,14 +31,18 @@
               <label for="exampleInputCity1"> City </label>
               <input type="Enter city" class="form-control" id="exampleInputCity1" placeholder="Enter city">
             </div>
-            <button type="submit" onclick="findJobs()" class="btn btn-info">Submit</button>
           </form>
+          <button type="button" onclick="findJobs()" class="btn btn-info">Submit</button>
         </div>
     </div> 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="../scripts/jobseeker.js"></Script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+        <script src="../scripts/site.js"></script>
+        <script src="../scripts/jobseeker.js"></script>
     </body>
 
 </html>

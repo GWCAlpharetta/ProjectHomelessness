@@ -21,10 +21,56 @@
             </div>
         </nav>
         <h1>Job Maker</h1>
+        <!--<button class="roundButton">+</button>-->
+
+        <div class="row"> 
+            <div class= "col-md-4 offset-md-1" > 
+              <form>
+                <div class="form-group">
+                  <label for="businessName">  Business Name </label>
+                  <input type="Enter Business Name" class="form-control" id="businessName" aria-describedby="emailHelp" placeholder="Enter Business Name">
+                </div>
+                <div class="form-group">
+                    <label for="jobName">  Job Name </label>
+                    <input type="Enter Job Name" class="form-control" id="jobName" aria-describedby="emailHelp" placeholder="Enter Job Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="cityName"> City </label>
+                    <input type="Enter City" class="form-control" id="cityName" aria-describedby="emailHelp" placeholder="Enter City">
+                  </div>
+                  <div class="form-group">
+                    <label for="zipcode">  Zipcode </label>
+                    <input type="Enter Zipcode" class="form-control" id="zipcode" aria-describedby="emailHelp" placeholder="Enter Zipcode">
+                  </div>
+                  <div class="form-group">
+                    <label for="description">  Description </label>
+                    <input type="Enter Description" class="form-control" id="description" aria-describedby="emailHelp" placeholder="Enter Description">
+                  </div>
+                  <div class="form-group">
+                    <label for="startDate">  Start Date </label>
+                    <input type="Enter Start Date" class="form-control" id="startDate" aria-describedby="emailHelp" placeholder="Enter Start Date">
+                  </div>
+                  <div class="form-group">
+                    <label for="endDate">  End Date </label>
+                    <input type="Enter End Date" class="form-control" id="endDate" aria-describedby="emailHelp" placeholder="Enter End Date">
+                  </div>
+                  <div class="form-group">
+                    <label for="hourlyRate"> Hourly Rate </label>
+                    <input type="Enter Hourly Rate" class="form-control" id="hourlyRate" aria-describedby="emailHelp" placeholder="Enter Hourly Rate">
+                  </div>
+              </form>
+              <button  onclick="listNow();return false" class="btn btn-info">List Now</button>
+            </div>
+        </div> 
+        
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+        <script src="../scripts/site.js"></Script>
+        <script src="../scripts/jobmaker.js"></Script>
     </body>
 
 </html>
