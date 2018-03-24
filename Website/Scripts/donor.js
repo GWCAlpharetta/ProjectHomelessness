@@ -1,7 +1,6 @@
 var db= firebase.firestore();
 
 function donateNow(){
-    var lastName=$("#donorLastName").val();
     var firstName=$("#donorFirstName").val();
     var amount=$("#donorAmount").val();
     var donorInMemoryOf=$("#donorInMemoryOf").val();
@@ -19,4 +18,23 @@ function donateNow(){
     .catch(function(error){
         alert("Error:"+error);
     });
+
 }
+function getTopDonors(){
+    db.collection("donors").orderBy("amount").limit(2).get()
+.then(function(donors){
+    donors.forEach(function(donor){
+        alert(donors.data().amount);
+    });
+
+})
+.catch(function(error){
+    alert("Error:"+error);
+});
+
+}
+function documentReady(){
+    alert("I am ready.");
+    
+}
+$(documentReady);
