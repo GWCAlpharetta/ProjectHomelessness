@@ -1,12 +1,13 @@
 var db= firebase.firestore();
 
 function donateNow(){
+    var lastName=$("#donorLastName").val();
     var firstName=$("#donorFirstName").val();
     var amount=$("#donorAmount").val();
+    var intAmount=parseInt(amount);
     var donorInMemoryOf=$("#donorInMemoryOf").val();
-   alert("Hello");
     db.collection("donors").add({
-        amount: amount,
+        amount: intAmount,
         firstName: firstName,
         lastName:lastName,
         inMemoryOf:donorInMemoryOf
@@ -21,10 +22,10 @@ function donateNow(){
 
 }
 function getTopDonors(){
-    db.collection("donors").orderBy("amount").limit(2).get()
+    db.collection("donors").orderBy("amount", "desc").limit(5).get()
 .then(function(donors){
     donors.forEach(function(donor){
-        alert(donors.data().amount);
+        alert(donor.data().amount);
     });
 
 })
@@ -34,7 +35,6 @@ function getTopDonors(){
 
 }
 function documentReady(){
-    alert("I am ready.");
-    
+    getTopDonors();
 }
 $(documentReady);
