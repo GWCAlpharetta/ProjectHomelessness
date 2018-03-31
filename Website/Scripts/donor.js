@@ -4,10 +4,10 @@ function donateNow(){
     var lastName=$("#donorLastName").val();
     var firstName=$("#donorFirstName").val();
     var amount=$("#donorAmount").val();
+    var intAmount=parseInt(amount);
     var donorInMemoryOf=$("#donorInMemoryOf").val();
-   alert("Hello");
     db.collection("donors").add({
-        amount: amount,
+        amount: intAmount,
         firstName: firstName,
         lastName:lastName,
         inMemoryOf:donorInMemoryOf
@@ -19,4 +19,22 @@ function donateNow(){
     .catch(function(error){
         alert("Error:"+error);
     });
+
 }
+function getTopDonors(){
+    db.collection("donors").orderBy("amount", "desc").limit(5).get()
+.then(function(donors){
+    donors.forEach(function(donor){
+        alert(donor.data().amount);
+    });
+
+})
+.catch(function(error){
+    alert("Error:"+error);
+});
+
+}
+function documentReady(){
+    getTopDonors();
+}
+$(documentReady);
