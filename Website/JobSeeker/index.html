@@ -26,10 +26,20 @@
           <form>
             <div class="form-group">
               <label for="exampleInputZipcode1">  Zipcode </label>
-              <input type="Enter zipcode" class="form-control" id="exampleInputZipcode1" aria-describedby="emailHelp" placeholder="Enter zipcode">
+              <input type="Enter zipcode" class="form-control" id="exampleInputZipcode1" aria-describedby="zipcodeHelpInline" placeholder="Enter zipcode">
+              <small id="zipcodeHelpInline" class="text-muted">
+                Ex: 12345, 98765
+              </small>
+              </div>
+              <div>
+                  or
+              </div>
             <div class="form-group">
               <label for="exampleInputCity1"> City </label>
-              <input type="Enter city" class="form-control" id="exampleInputCity1" placeholder="Enter city">
+              <input type="Enter city" class="form-control" id="exampleInputCity1"  aria-describedby="cityHelpInline" placeholder="Enter city">
+              <small id="cityHelpInline" class="text-muted">
+                Ex: John's Creek, Hagerstown
+              </small>
             </div>
           </form>
           <button type="button" onclick="findJobs()" class="btn btn-info">Submit</button>
