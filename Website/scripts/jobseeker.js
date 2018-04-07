@@ -3,9 +3,19 @@ var db= firebase.firestore();
 function findJobs(){
 var zipcode=$("#exampleInputZipcode1");
 var city=$("#exampleInputCity1");
+var condition='';
+var value='';
+if(city.val() != ''){
+    condition='cityName';
+    value=city.val();
+}
+else if(zipcode.val() != ''){
+    condition='zipcode';
+    value=zipcode.val();
+}
 //alert ("zip= "+zipcode.val()
 //+" city= " +city.val());
-db.collection("jobs").where("zipcode", "==", zipcode.val()).get()
+db.collection("jobs").where(condition, "==", value).get()
 .then(function(jobs){
     var tbody=$("#searchResults")
     jobs.forEach(function(job){
