@@ -1,6 +1,7 @@
 var db= firebase.firestore();
 
 function findJobs(){
+    clearSearchResults();
 var zipcode=$("#exampleInputZipcode1");
 var city=$("#exampleInputCity1");
 var condition='';
@@ -17,11 +18,11 @@ else if(zipcode.val() != ''){
 //+" city= " +city.val());
 db.collection("jobs").where(condition, "==", value).get()
 .then(function(jobs){
-    var tbody=$("#searchResults")
+    var tbody=$("#searchResults");
     jobs.forEach(function(job){
         //alert(job.data().businessName);
         var jobData=job.data();
-        tbody.append("<tr><td>"+jobData.businessName+"</td><td>"+jobData.cityName+"</td><td"+jobData.zipcode+"></td><td>"+jobData.description+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td><td>"+jobData.jobName+"</td></tr>")
+        tbody.append("<tr><td>"+jobData.businessName+"</td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
         
     });
 
@@ -31,3 +32,11 @@ db.collection("jobs").where(condition, "==", value).get()
 });
 
 }
+function clearSearchResults(){
+    var tbody=$("#searchResults");
+    tbody.empty(); 
+}
+ function documentReady(){
+    clearSearchResults();
+}
+$(documentReady);
