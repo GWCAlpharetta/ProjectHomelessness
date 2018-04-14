@@ -22,7 +22,7 @@ db.collection("jobs").where(condition, "==", value).get()
     jobs.forEach(function(job){
         //alert(job.data().businessName);
         var jobData=job.data();
-        tbody.append("<tr><td>"+jobData.businessName+"</td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
+        tbody.append("<tr><td><button type='button' class='btn btn-link' data-toggle='modal' data-target='#exampleModal'>"+jobData.businessName+"</button></td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
         
     });
 
@@ -38,5 +38,12 @@ function clearSearchResults(){
 }
  function documentReady(){
     clearSearchResults();
+    clearForm();
+}
+function clearForm(){
+    var zipcode=$("#exampleInputZipcode1");
+    var city=$("#exampleInputCity1");
+    zipcode.val('');
+    city.val('');
 }
 $(documentReady);
