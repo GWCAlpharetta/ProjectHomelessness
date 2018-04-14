@@ -23,17 +23,18 @@ function donateNow(){
 }
 function getTopDonors(){
     db.collection("donors").orderBy("amount", "desc").limit(5).get()
-.then(function(donors){
-    donors.forEach(function(donor){
-        alert(donor.data().amount);
+    .then(function(donors){
+        var tbody=$("#topDonors");
+        donors.forEach(function(donor){
+            var donorData=donor.data();
+            tbody.append("<tr><td>"+donorData.amount+"</td><td>"+donorData.lastName+", " + donorData.firstName+"</td><td>"+donorData.description+"</td></tr>")
+        });
+    })
+    .catch(function(error){
+        alert("Error:"+error);
     });
-
-})
-.catch(function(error){
-    alert("Error:"+error);
-});
-
 }
+
 function documentReady(){
     getTopDonors();
 }
