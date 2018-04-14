@@ -21,7 +21,7 @@ db.collection("jobs").where(condition, "==", value).get()
     jobs.forEach(function(job){
         //alert(job.data().businessName);
         var jobData=job.data();
-        tbody.append("<tr><td>"+jobData.businessName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.description+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td><td>"+jobData.jobName+"</td></tr>")
+        tbody.append("<tr><td>"+jobData.businessName+"</td><td>"+jobData.cityName+"</td><td"+jobData.zipcode+"></td><td>"+jobData.description+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td><td>"+jobData.jobName+"</td></tr>")
         
     });
 
