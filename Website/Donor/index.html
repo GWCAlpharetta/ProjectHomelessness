@@ -3,6 +3,7 @@
         <title> Hope for a Home </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="../Styles/site.css" rel="stylesheet">
+        <link href="../Styles/donor.css" rel="stylesheet">
     </head>
     <body>
 
@@ -18,22 +19,63 @@
                 <a class="py-2 d-none d-md-inline-block" href="../Sponsor/index.html">Sponsor</a>
                 <a class="py-2 d-none d-md-inline-block" href="../Volunteer/index.html">Volunteer</a>
                 <a class="py-2 d-none d-md-inline-block" href="../About/index.html">About Us</a>
-            
-                
             </div>
-       
-            </nav>
-        
-            <h1>Donor</h1>
-            <img src="donateMoney.png" class="img-fluid">
+        </nav>
+        <div id="donorHeader" class="row col-md-8">
+            <h3> What Can You do to Help?</h3><br />
+            <h5>It's okay if you don't want to volunteer or don't have any jobs for those who need it. You can still help!</h5>
+            <p>If you don't have time to volunteer or jobs to hand out to those who need it, but still want to help, you're in luck! You can contribute to those who need it by donating! The money will be sent to help people get access to this website, fund homelessness shelters, and will be sent to fundraisers to eradicate homelessness.</p>
+        </div>
+        <div class="row"> 
+            <div class= "col-md-4 offset-md-1" > 
+              <form>
+                <div class="form-group">
+                  <label for="donorLastName">  Last Name </label>
+                  <input type="Enter Last Name" class="form-control" id="donorLastName" aria-describedby="emailHelp" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="donorFirstName">  First Name </label>
+                    <input type="Enter First Name" class="form-control" id="donorFirstName" aria-describedby="emailHelp" placeholder="Enter First Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="donorAmount"> Amount </label>
+                    <input type="Enter Amount" class="form-control" id="donorAmount" aria-describedby="emailHelp" placeholder="Enter Amount">
+                  </div>
+                  <div class="form-group">
+                    <label for="donorInMemoryOf"> Reason </label>
+                    <input type="Enter In" class="form-control" id="donorInMemoryOf" aria-describedby="emailHelp" placeholder="Enter Name">
+                  </div>
+              </form>
+              <button  onclick="donateNow();return false" class="btn btn-info">Donate Now</button>
+            </div>
+            <div class= "col-md-4 offset-md-1">
+       <table class="table table">
+           <thead class="thead-dark">
+               <tr>
+                   <td>
+                     Amount
+                   </td>
+                   <td>
+                    Donor
+                   </td>
+                   <td>
+                    Reason
+                   </td>
+               </tr>
+           </thead>
+           <tbody id= "topDonors">
+           </tbody>
+       </table>         
+            </div>
+        </div> 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
-        
-        
-    
-
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+        <script src="../scripts/site.js"></Script>
+        <script src="../scripts/donor.js"></Script>
     </body>
 
 </html>
