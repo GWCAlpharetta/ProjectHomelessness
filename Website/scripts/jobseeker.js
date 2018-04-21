@@ -1,4 +1,5 @@
 var db= firebase.firestore();
+var currentJobId='';
 
 function findJobs(){
 var zipcode=$("#exampleInputZipcode1");
@@ -22,7 +23,7 @@ db.collection("jobs").where(condition, "==", value).get()
         //alert(job.data().businessName);
         var jobData=job.data();
 
-        tbody.append("<tr><td><button type='button' class='btn btn-link' data-toggle='modal' data-target='#exampleModal'>"+jobData.businessName+"</button></td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
+        tbody.append("<tr><td><button onClick=setCurrentJobId('"+job.id+"') type='button' class='btn btn-link' data-toggle='modal' data-target='#exampleModal'>"+jobData.businessName+"</button></td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
         
     });
 
@@ -32,6 +33,10 @@ db.collection("jobs").where(condition, "==", value).get()
 });
 
 
+}
+function setCurrentJobId(jobId){
+    currentJobId=jobId;
+    alert(jobId);
 }
 function clearSearchResults(){
     var tbody=$("#searchResults");
@@ -47,7 +52,10 @@ function clearForm(){
     zipcode.val('');
     city.val('');
 }
+$('#jobDetailsModal').on('shown.bs.modal', function () {
+    alert("IAmHedwig")
+  })
 $(documentReady);
 
-}
+
 
