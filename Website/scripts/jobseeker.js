@@ -23,7 +23,7 @@ db.collection("jobs").where(condition, "==", value).get()
         //alert(job.data().businessName);
         var jobData=job.data();
 
-        tbody.append("<tr><td><button onClick=setCurrentJobId('"+job.id+"') type='button' class='btn btn-link' data-toggle='modal' data-target='#exampleModal'>"+jobData.businessName+"</button></td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
+        tbody.append("<tr><td><button onClick=setCurrentJobId('"+job.id+"') type='button' class='btn btn-link' data-toggle='modal' data-target='#jobDetailsModal'>"+jobData.businessName+"</button></td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
         
     });
 
@@ -36,7 +36,7 @@ db.collection("jobs").where(condition, "==", value).get()
 }
 function setCurrentJobId(jobId){
     currentJobId=jobId;
-    alert(jobId);
+    //alert(jobId);
 }
 function clearSearchResults(){
     var tbody=$("#searchResults");
@@ -52,8 +52,29 @@ function clearForm(){
     zipcode.val('');
     city.val('');
 }
+function getJobDetails(jobId){
+    var docRef = db.collection("jobs").doc(jobId);
+
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            var jobData=doc.data();
+    
+            $('#jobName').text(jobData.jobName);
+            $('#hourlyRate').text(jobData.hourlyRate);
+            $('#jobDescription').text(jobData.description);
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+    
+    
+}
 $('#jobDetailsModal').on('shown.bs.modal', function () {
-    alert("IAmHedwig")
+    getJobDetails(currentJobId)
   })
 $(documentReady);
 
