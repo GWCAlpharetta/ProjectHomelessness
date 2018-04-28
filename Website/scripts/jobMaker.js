@@ -14,6 +14,7 @@ function listNow(){
     var businessName=$("#businessName").val();
     var startTime=$("#startTime").val();
     var endTime=$("#endTime").val();
+    var addressName=$("#addressName").val();
 
    alert("Hello");
     db.collection("jobs").add({
@@ -29,7 +30,8 @@ function listNow(){
         emailAddress:emailAddress,
         businessName:businessName,
         startTime:startTime,
-        endTime:endTime
+        endTime:endTime,
+        addressName:addressName
     })
     .then(function(docRef){
         alert("Your Job Has Been Listed.");
