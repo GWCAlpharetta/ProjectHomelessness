@@ -23,7 +23,7 @@ db.collection("jobs").where(condition, "==", value).get()
         //alert(job.data().businessName);
         var jobData=job.data();
 
-        tbody.append("<tr><td><button onClick=setCurrentJobId('"+job.id+"') type='button' class='btn btn-link' data-toggle='modal' data-target='#jobDetailsModal'>"+jobData.businessName+"</button></td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.endDate+"</td></tr>")
+        tbody.append("<tr><td><button onClick=setCurrentJobId('"+job.id+"') type='button' class='btn btn-link' data-toggle='modal' data-target='#jobDetailsModal'>"+jobData.businessName+"</button></td><td>"+jobData.jobName+"</td><td>"+jobData.cityName+"</td><td>"+jobData.zipcode+"</td><td>"+jobData.hourlyRate+"</td><td>"+jobData.startDate+"</td><td>"+jobData.startTime+"</td><td>"+jobData.endDate+"</td><td>"+jobData.endTime+"</td></tr>")
         
     });
 
@@ -63,6 +63,10 @@ function getJobDetails(jobId){
             $('#jobName').text(jobData.jobName);
             $('#hourlyRate').text(jobData.hourlyRate);
             $('#jobDescription').text(jobData.description);
+            $('#emailAddress').text(jobData.emailAddress);
+            $('#addressName').text(jobData.addressName);
+            $('#phoneNumber').text(jobData.phoneNumber);
+            
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
