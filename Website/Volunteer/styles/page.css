@@ -1,0 +1,54 @@
+.area1 {
+    color: lightpink;
+    padding: 0 7px;
+
+}
+.area2 { 
+    color: black;
+    padding: 0 7px;
+    font-size: 40px;
+    width: 645px
+    
+
+ 
+    
+
+}
+.area3 {
+    color: black;
+    padding: 0 7px;
+    font-size: 40px;
+
+
+
+}
+@media screen and (max-width: 481px){
+    #area1 { /*stack the 2 text boxes*/
+        float: left;
+        color: lightpink;
+        padding: 0px;
+        width: 94%; /*3%+94%+3=100%=full width*/
+        margin: 3%; /*3% margin spaces on all sides*/
+    
+    
+    }
+
+    #area2 { /*stack the 2 text boxes*/
+        float: left;
+        color: black;
+        padding: 0px;
+        font-size: 40px;
+        width: 94%; /*3%+94%+3=100%=full width*/
+        margin: 3%; /*3% margin spaces on all sides*/
+        
+    
+     
+        
+    
+    }
+    #area3 {
+        color: black;
+        padding: 0 7px;
+        font-size: 40px;
+    }
+}
