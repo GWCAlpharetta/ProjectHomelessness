@@ -23,17 +23,23 @@
 
 }
 @media screen and (max-width: 481px){
-    #area1 {
+    #area1 { /*stack the 2 text boxes*/
+        float: left;
         color: lightpink;
-        padding: 0 7px;
-        *min-width: 640px;
+        padding: 0px;
+        width: 94%; /*3%+94%+3=100%=full width*/
+        margin: 3%; /*3% margin spaces on all sides*/
+    
     
     }
-    #area2 { 
+
+    #area2 { /*stack the 2 text boxes*/
+        float: left;
         color: black;
-        padding: 0 7px;
+        padding: 0px;
         font-size: 40px;
-        width: 645px
+        width: 94%; /*3%+94%+3=100%=full width*/
+        margin: 3%; /*3% margin spaces on all sides*/
         
     
      
