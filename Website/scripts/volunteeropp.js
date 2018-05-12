@@ -64,7 +64,7 @@ function getOppDetails(oppId){
             var oppData=doc.data();
             //alert (JSON.stringify(oppData));
             $('#shelterNameDetail').text(oppData.shelterName);
-            $('#hourlyRate').text(oppData.hourlyRate);
+            $('#jobNameDetail').text(oppData.jobName);
             $('#jobDescription').text(oppData.description);
         } else {
             // doc.data() will be undefined in this case
