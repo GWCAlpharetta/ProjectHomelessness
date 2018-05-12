@@ -3,6 +3,8 @@
         <title> Hope for a Home </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="../Styles/site.css" rel="stylesheet">
+        <link href="styles/page.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
     </head>
     <body>
 
@@ -21,9 +23,115 @@
             </div>
         </nav>
         <h1>Volunteer</h1>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       
+        <!-- start content here -->
+        <div class="text-left area1">Volunteering for the homeless is a great way to give back to the community and an amazing experience! There are many ways that you can help the homeless; you can volunteer at a nearby homeless shelter and serve food, you and your family or friends can make little bags with toothpaste or any other essential products (nothing fancy). For woman you can make little bags with products that woman need every month.  Below is a link where you can search and find a homeless shelter near you. </div>
+
+        
+            <!-- Content here -->
+          <div class="text-left area2">Homeless Shelter Locator:</div>
+          <a href="https://www.homelessshelterdirectory.org">Homeless Shelter Directory</a>
+          <style>
+            body { 
+             Background-color:white
+
+            
+            }
+             
+            </style>  
+   <!-- Content here -->
+          <div class="text-left area3">
+            
+            Why is Volunteering Helpful?
+            
+          </div> 
+          <div class="text-left area4">
+            <!-- Content here -->
+            Volunteering is a great way to give back to your community and it is also a great learning experience! It helps you see things from and different perspective and sometimes the people living in the homeless shelters can tell you interesting stories. It really makes you think about how grateful you need to be for what you have because a lot of people can barely afford food off a dollar menu. You also get to put a smile on someone else's face. Studies show that by just a simple smile can make someone's day. Another benefit is it can go towards your community hours for school or a group that you're in. Even if you just go to hand out food you're making a huge impact in your community. Even the little things count.
+          </div>
+          <div class="row"> 
+            <div class= "col-md-4 offset-md-1" > 
+              <form>
+                <div class="form-group">
+                  <label for="shelterName">  Shelter Name </label>
+                  <input type="Enter Shelter Name" class="form-control" id="shelterName" aria-describedby="emailHelp" placeholder="Enter Shelter Name">
+                </div>
+                <div class="form-group">
+                    <label for="jobName">  Job Name </label>
+                    <input type="Enter Job Name" class="form-control" id="jobName" aria-describedby="emailHelp" placeholder="Enter Job Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="cityName"> City </label>
+                    <input type="Enter City" class="form-control" id="cityName" aria-describedby="emailHelp" placeholder="Enter City">
+                  </div>
+                  <div class="form-group">
+                    <label for="zipcode">  Zipcode </label>
+                    <input type="Enter Zipcode" class="form-control" id="zipcode" aria-describedby="emailHelp" placeholder="Enter Zipcode">
+                  </div>
+                  <div class="form-group">
+                    <label for="description">  Description </label>
+                    <input type="Enter Description" class="form-control" id="description" aria-describedby="emailHelp" placeholder="Enter Description">
+                  </div>
+                  <div class="form-group">
+                    <label for="address1">  Address 1 </label>
+                    <input type="Enter address 1" class="form-control" id="address1" aria-describedby="emailHelp" placeholder="Enter Address 1">
+                  </div>
+                  <div class="form-group">
+                    <label for="address2">  Address 2 </label>
+                    <input type="Enter End Date" class="form-control" id="address2" aria-describedby="emailHelp" placeholder="Enter Address 2">
+                  </div>
+                  <div class="form-group">
+                    <label for="timeDay"> Time Day </label>
+                    <input type="Enter Time Day" class="form-control" id="timeDay" aria-describedby="emailHelp" placeholder="Enter Time Day">
+                  </div>
+                  <div class="form-group">
+                    <label for="email"> Email </label>
+                    <input type="Enter Email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone"> Phone </label>
+                    <input type="Enter Phone" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Enter Phone">
+                  </div>
+              </form>
+              <button  onclick="listNow();return false" class="btn btn-info">List Now</button>
+            </div>
+         
+        <div class= "col-md-4 offset-md-1">
+          <table class="table table">
+              <thead class="thead-dark">
+                  <tr>
+                      <td>
+                        Shelter
+                      </td>
+                      <td>
+                       Location
+                      </td>
+                      <td>
+                       Time
+                      </td>
+                      <td>
+                      Position
+                      </td>
+
+                  </tr>
+              </thead>
+              <tbody id= "topDonors">
+              </tbody>
+          </table>         
+               </div>
+               </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-firestore.js"></script>
+        <script src="../scripts/site.js"></Script>
+        <script src="../scripts/volunteeropp.js"></Script>
+         
+   
+
+
         
     </body>
 
